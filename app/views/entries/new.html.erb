@@ -1,0 +1,32 @@
+<h1>New Post for <%= @place.name %></h1>
+
+<form action="/entries" method="post">
+  <input type="hidden" name="place_id" value="<%= @place.id %>">
+
+  <p>
+    <label>
+      Title:
+      <input type="text" name="title">
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Date:
+      <input type="date" name="occurred_on">
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Description:
+      <textarea name="description"></textarea>
+    </label>
+  </p>
+
+  <button type="submit">Add Post</button>
+</form>
+
+<p>
+  <a href="/places/<%= @place.id %>">Back to <%= @place.name %></a>
+</p>
